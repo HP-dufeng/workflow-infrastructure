@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+dangqu.powertrade.spring.boot.modelmapper.ModelMapperAutoConfiguration

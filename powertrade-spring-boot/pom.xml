@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>dangqu.powertrade</groupId>
+    <artifactId>dangqu-powertrade-root</artifactId>
+    <relativePath>../</relativePath>
+    <version>${revision}</version>
+  </parent>
+
+  <properties>
+    <spring.boot.version>2.4.2</spring.boot.version>
+  </properties>
+  <artifactId>powertrade-spring-boot</artifactId>
+
+  <packaging>pom</packaging>
+
+  <modules>
+
+    <module>powertrade-security-conf</module>
+
+    <module>powertrade-healthcheck-conf</module>
+
+    <module>powertrade-spring-boot-starters</module>
+
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- Import dependency management from Spring Boot -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>dangqu.powertrade</groupId>
+        <artifactId>powertrade-healthcheck-conf</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    
+      <dependency>
+        <groupId>dangqu.powertrade</groupId>
+        <artifactId>powertrade-security-conf</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+</project>

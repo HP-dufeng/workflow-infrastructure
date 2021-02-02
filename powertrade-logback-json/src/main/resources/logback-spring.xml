@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration scan="true" scanPeriod="60" debug="false">
+    <springProfile name="Development | Staging | Production">
+        <conversionRule conversionWord="json" converterClass="dangqu.powertrade.logback.json.DefaultConverter" />
+        <appender name="consoleJsonAppender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%json%n</pattern>
+            </encoder>
+        </appender>
+        <root level="info">
+            <appender-ref ref="consoleJsonAppender" />
+        </root>
+    </springProfile>
+
+    <springProfile name="default">
+        <include resource="org/springframework/boot/logging/logback/base.xml" />
+    </springProfile>
+</Configuration>
